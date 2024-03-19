@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'JT Douro-Sans';
+    src: url('JTDouro-Sans-Bold.eot');
+    src: local('JT Douro-Sans Bold'), local('JTDouro-Sans-Bold'),
+        url('JTDouro-Sans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('JTDouro-Sans-Bold.woff2') format('woff2'),
+        url('JTDouro-Sans-Bold.woff') format('woff'),
+        url('JTDouro-Sans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JT Douro-Sans';
+    src: url('JTDouro-Sans-BlackItalic.eot');
+    src: local('JT Douro-Sans Black Italic'), local('JTDouro-Sans-BlackItalic'),
+        url('JTDouro-Sans-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('JTDouro-Sans-BlackItalic.woff2') format('woff2'),
+        url('JTDouro-Sans-BlackItalic.woff') format('woff'),
+        url('JTDouro-Sans-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'JT Douro-Sans';
+    src: url('JTDouro-Sans-Regular.eot');
+    src: local('JT Douro-Sans Regular'), local('JTDouro-Sans-Regular'),
+        url('JTDouro-Sans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('JTDouro-Sans-Regular.woff2') format('woff2'),
+        url('JTDouro-Sans-Regular.woff') format('woff'),
+        url('JTDouro-Sans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JT Douro-Sans';
+    src: url('JTDouro-Sans-LightItalic.eot');
+    src: local('JT Douro-Sans Light Italic'), local('JTDouro-Sans-LightItalic'),
+        url('JTDouro-Sans-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('JTDouro-Sans-LightItalic.woff2') format('woff2'),
+        url('JTDouro-Sans-LightItalic.woff') format('woff'),
+        url('JTDouro-Sans-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'JT Douro-Sans';
+    src: url('JTDouro-Sans-BoldItalic.eot');
+    src: local('JT Douro-Sans Bold Italic'), local('JTDouro-Sans-BoldItalic'),
+        url('JTDouro-Sans-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('JTDouro-Sans-BoldItalic.woff2') format('woff2'),
+        url('JTDouro-Sans-BoldItalic.woff') format('woff'),
+        url('JTDouro-Sans-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'JT Douro-Sans';
+    src: url('JTDouro-Sans-Medium.eot');
+    src: local('JT Douro-Sans Medium'), local('JTDouro-Sans-Medium'),
+        url('JTDouro-Sans-Medium.eot?#iefix') format('embedded-opentype'),
+        url('JTDouro-Sans-Medium.woff2') format('woff2'),
+        url('JTDouro-Sans-Medium.woff') format('woff'),
+        url('JTDouro-Sans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JT Douro-Sans';
+    src: url('JTDouro-Sans-RegularItalic.eot');
+    src: local('JT Douro-Sans Regular Italic'), local('JTDouro-Sans-RegularItalic'),
+        url('JTDouro-Sans-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('JTDouro-Sans-RegularItalic.woff2') format('woff2'),
+        url('JTDouro-Sans-RegularItalic.woff') format('woff'),
+        url('JTDouro-Sans-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'JT Douro-Sans';
+    src: url('JTDouro-Sans-Black.eot');
+    src: local('JT Douro-Sans Black'), local('JTDouro-Sans-Black'),
+        url('JTDouro-Sans-Black.eot?#iefix') format('embedded-opentype'),
+        url('JTDouro-Sans-Black.woff2') format('woff2'),
+        url('JTDouro-Sans-Black.woff') format('woff'),
+        url('JTDouro-Sans-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JT Douro-Sans';
+    src: url('JTDouro-Sans-Light.eot');
+    src: local('JT Douro-Sans Light'), local('JTDouro-Sans-Light'),
+        url('JTDouro-Sans-Light.eot?#iefix') format('embedded-opentype'),
+        url('JTDouro-Sans-Light.woff2') format('woff2'),
+        url('JTDouro-Sans-Light.woff') format('woff'),
+        url('JTDouro-Sans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JT Douro-Sans';
+    src: url('JTDouro-Sans-MediumItalic.eot');
+    src: local('JT Douro-Sans Medium Italic'), local('JTDouro-Sans-MediumItalic'),
+        url('JTDouro-Sans-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('JTDouro-Sans-MediumItalic.woff2') format('woff2'),
+        url('JTDouro-Sans-MediumItalic.woff') format('woff'),
+        url('JTDouro-Sans-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
