@@ -2,6 +2,7 @@ import { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getContactInfo } from "../../store/contact/contactAction";
 import { useTranslation } from "react-i18next";
+import { baseUrl } from "../../utils/APi";
 const Contact = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const Contact = () => {
                 <div>
                   <img
                     className="img-fluid top"
-                    src={`http://localhost:1337${info[0]?.attributes?.image.data[1].attributes.url}`}
+                    src={`${baseUrl}${info[0]?.attributes?.image.data[1].attributes.url}`}
                     alt="contant-top"
                   />
                   <p className="bottom-text px-xl-0 px-3">
@@ -32,7 +33,7 @@ const Contact = () => {
                   <p className="top-text text-dark top-text">GET IN TOUCH .</p>
                   <img
                     className="img-fluid"
-                    src={`http://localhost:1337${info[0]?.attributes?.image.data[0].attributes.url}`}
+                    src={`${baseUrl}${info[0]?.attributes?.image.data[0].attributes.url}`}
                     alt="contact-bottom"
                     style={{ objectFit: "cover" }}
                   />

@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getProducts, getcategory } from "../../store/products/productAction";
 import { Link } from "react-router-dom";
+import img from "../../assets/images/products/1.png";
 import { useTranslation } from "react-i18next";
 import { baseUrl } from "../../utils/APi";
 const Products = () => {
@@ -44,11 +45,7 @@ const Products = () => {
             </div>
             <div className="col-lg-8 col-12" data-aos="zoom-in-up">
               <div className="main-img">
-                <img
-                  className="img-fluid h-100"
-                  src="./images/products/1.png"
-                  alt="main-img"
-                />
+                <img className="img-fluid h-100" src={img} alt="main-img" />
               </div>
             </div>
           </div>

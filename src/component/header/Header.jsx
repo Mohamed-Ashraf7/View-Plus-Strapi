@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import SideNav from "./SideNav";
 import ContactForm from "./ContactForm";
-import Logo from "../../../images/LOGO/BLACK LOGO.png";
+import Logo from "../../assets/images/LOGO/BLACK LOGO.png";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Cookies from "js-cookie";
@@ -10,13 +10,13 @@ const languages = [
     code: "en",
     name: "English",
     dir: "ltr", // Default direction for English
-    stylesheet: "./css/style.css", // Default stylesheet for English
+    stylesheet: "../../src/assets/css/style.css", // Default stylesheet for English
   },
   {
     code: "ar",
     name: "العربية",
     dir: "rtl",
-    stylesheet: "./css/style-ar.css",
+    stylesheet: "../../src/assets/css/style-ar.css",
   },
 ];
 const Header = () => {
@@ -40,9 +40,9 @@ const Header = () => {
       const stylesheetLink = document.getElementById("stylesheet");
       if (stylesheetLink) {
         if (currentLanguage.code === "ar") {
-          stylesheetLink.href = "../css/style-ar.css";
+          stylesheetLink.href = "../../src/assets/css/style-ar.css";
         } else {
-          stylesheetLink.href = "../css/style.css";
+          stylesheetLink.href = "../../src/assets/css/style.css";
         }
       }
     }

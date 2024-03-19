@@ -1,7 +1,9 @@
 import { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
+import img from "../../assets/images/about/signature.jpg";
 import { getAbout } from "./../../store/about/aboutAction";
+import { baseUrl } from "../../utils/APi";
 import Team from "./Team";
 const Hero = () => {
   const { t } = useTranslation();
@@ -23,7 +25,7 @@ const Hero = () => {
         </div>
         <div className="about-main-image">
           <img
-            src={`http://localhost:1337${info[0]?.attributes?.image.data.attributes.url}`}
+            src={`${baseUrl}${info[0]?.attributes?.image.data.attributes.url}`}
           />
         </div>
       </section>
@@ -52,7 +54,7 @@ const Hero = () => {
                 <img
                   className="img-fluid"
                   loading="lazy"
-                  src={`http://localhost:1337${info[2]?.attributes?.image.data.attributes.url}`}
+                  src={`${baseUrl}${info[2]?.attributes?.image.data.attributes.url}`}
                   alt="about-top"
                 />
               </div>
@@ -73,7 +75,7 @@ const Hero = () => {
                 <img
                   loading="lazy"
                   alt="signature"
-                  src="./images/about/signature.PNG"
+                  src={img}
                   style={{ width: "200px", height: "100px" }}
                 />
               </h4>
@@ -81,7 +83,7 @@ const Hero = () => {
             <div className="about-desc-img col-lg-11 col-12  ">
               <img
                 className="mx-auto"
-                src={`http://localhost:1337${info[3]?.attributes?.image.data.attributes.url}`}
+                src={`${baseUrl}${info[3]?.attributes?.image.data.attributes.url}`}
                 alt="about-main"
               />
             </div>
@@ -123,7 +125,7 @@ const Hero = () => {
                 id="service"
                 loading="lazy"
                 alt="what-do-image"
-                src={`http://localhost:1337${info[4]?.attributes?.image.data.attributes.url}`}
+                src={`${baseUrl}${info[4]?.attributes?.image.data.attributes.url}`}
                 className="img-fluid what-top-img"
               />
             </div>
@@ -133,13 +135,13 @@ const Hero = () => {
               <img
                 loading="lazy"
                 alt="what-do-image-one"
-                src={`http://localhost:1337${info[6]?.attributes?.image.data.attributes.url}`}
+                src={`${baseUrl}${info[6]?.attributes?.image.data.attributes.url}`}
                 className="img-fluid what-bottom-img"
               />
               <img
                 loading="lazy"
                 alt="what-do-image-two"
-                src={`http://localhost:1337${info[8]?.attributes?.image.data.attributes.url}`}
+                src={`${baseUrl}${info[8]?.attributes?.image.data.attributes.url}`}
                 className="img-fluid what-bottom-img"
               />
             </div>

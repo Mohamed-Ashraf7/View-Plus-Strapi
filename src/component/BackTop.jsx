@@ -1,4 +1,4 @@
-import img from "../../images/up-arrow.png";
+import img from "../assets/images/up-arrow.png";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 const BackTop = () => {

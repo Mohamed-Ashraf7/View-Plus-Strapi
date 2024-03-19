@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Cookies from "js-cookie";
-import img from "../../../images/LOGO/BLACK LOGO.png";
+import img from "../../assets/images/LOGO/BLACK LOGO.png";
 const languages = [
   {
     code: "en",
