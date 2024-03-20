@@ -1,9 +1,9 @@
 import axios from "axios";
 
 export const instance = axios.create({
-  baseURL: "http://localhost:1337",
+  baseURL: "https://diligent-canvas-56429d634c.strapiapp.com",
   headers: {
     "content-type": "application/json",
   },
 });
-export const baseUrl = "http://localhost:1337";
+export const baseUrl = "https://diligent-canvas-56429d634c.strapiapp.com";

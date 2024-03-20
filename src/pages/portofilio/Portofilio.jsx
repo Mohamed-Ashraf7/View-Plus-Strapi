@@ -6,7 +6,7 @@ import {
   getProjects,
   getProjectCat,
 } from "../../store/project/projectAction";
-import { baseUrl } from "../../utils/APi";
+
 import { useTranslation } from "react-i18next";
 const Portofilio = () => {
   const { t } = useTranslation();
@@ -45,7 +45,7 @@ const Portofilio = () => {
           <div className="row py-5">
             <div className="col-md-12 center-content">
               <img
-                src={`${baseUrl}${info[0]?.attributes.image.data.attributes.url}`}
+                src={`${info[0]?.attributes.image.data.attributes.url}`}
                 alt="Small Image"
               />
               <h1>{t(`${info[0]?.attributes?.title}`)}</h1>
@@ -142,12 +142,12 @@ const Portofilio = () => {
                       <p>{item?.attributes?.subtitle}</p>
                     </div>
                     <a
-                      href={`${baseUrl}${item?.attributes.main_image.data?.attributes?.url}`}
+                      href={`${item?.attributes.main_image.data?.attributes?.url}`}
                       className="image-gallery"
                       data-lightbox="roadtrip"
                     >
                       <img
-                        src={`${baseUrl}${item?.attributes.main_image.data?.attributes?.url}`}
+                        src={`${item?.attributes.main_image.data?.attributes?.url}`}
                         alt={item?.attributes.main_image.data?.attributes?.url}
                         className="img-fluid"
                         loading="lazy"

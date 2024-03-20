@@ -4,7 +4,7 @@ import { getProjects } from "../../store/project/projectAction";
 import MySwiper from "../../component/Swiper";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { baseUrl } from "../../utils/APi";
+
 const Projects = () => {
   const dispatch = useDispatch();
   const Projects = useSelector((state) => state.projectSlicer.Projects);
@@ -28,7 +28,7 @@ const Projects = () => {
                 >
                   <img
                     alt={item?.attributes?.title}
-                    src={`${baseUrl}${item?.attributes?.main_image.data.attributes.url}`}
+                    src={`${item?.attributes?.main_image.data.attributes.url}`}
                   />
                   <h5>{item?.attributes?.title}</h5>
                   <p>{item?.attributes?.subtitle}</p>

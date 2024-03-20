@@ -4,7 +4,7 @@ import { getProducts, getcategory } from "../../store/products/productAction";
 import { Link } from "react-router-dom";
 import img from "../../assets/images/products/1.png";
 import { useTranslation } from "react-i18next";
-import { baseUrl } from "../../utils/APi";
+
 const Products = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -93,7 +93,7 @@ const Products = () => {
                 >
                   <img
                     loading="lazy"
-                    src={`${baseUrl}${item?.attributes?.main_image.data.attributes.url}`}
+                    src={`${item?.attributes?.main_image.data.attributes.url}`}
                     alt={item?.attributes?.main_image.data.attributes.url}
                     className="img-fluid"
                   />

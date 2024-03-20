@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getHomeInfo } from "../../store/home/homeAction";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { baseUrl } from "../../utils/APi";
+
 const About = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -80,13 +80,13 @@ const About = () => {
               <div className="about-img">
                 <img
                   className="img-fluid top"
-                  src={`${baseUrl}${info[1]?.attributes?.image.data[0].attributes.url}`}
+                  src={`${info[1]?.attributes?.image.data[0].attributes.url}`}
                   alt="about-top"
                   loading="lazy"
                 />
                 <img
                   className="img-fluid"
-                  src={`${baseUrl}${info[1]?.attributes?.image.data[1].attributes.url}`}
+                  src={`${info[1]?.attributes?.image.data[1].attributes.url}`}
                   alt="about-bottom"
                   style={{ objectFit: "cover" }}
                   loading="lazy"
@@ -103,7 +103,7 @@ const About = () => {
               <div className="Interior-img">
                 <img
                   className="img-fluid"
-                  src={`${baseUrl}${info[2]?.attributes?.image.data[0].attributes.url}`}
+                  src={`${info[2]?.attributes?.image.data[0].attributes.url}`}
                   alt="about-content"
                   loading="lazy"
                 />

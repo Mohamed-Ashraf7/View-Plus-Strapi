@@ -16,6 +16,10 @@
 body {
   overflow-x: hidden;
 }
+.fs-small {
+  font-size: 0.8rem !important;
+  color: rgb(211, 26, 26) !important;
+}
 :root {
   --light-gray: #eeedee;
   --dark-gray: #d9d9d9;
@@ -2467,8 +2471,8 @@ p {
   top: 10px;
   left: 10px;
   cursor: pointer;
-  font-size: 20px;
-  color: #999;
+  font-size: 40px;
+  color: rgb(211, 26, 26);
 }
 #appointmentPopup h2 {
   font-family: "Century Gothic";
@@ -2612,6 +2616,7 @@ p {
 .box {
   /* width: 140px; */
   height: auto;
+  font-size: 0.9rem;
   /* float: left; */
   transition: 0.5s linear;
   position: relative;

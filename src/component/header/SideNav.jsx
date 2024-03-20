@@ -47,19 +47,14 @@ const SideNav = ({ width, Close }) => {
       <a aria-label="close-btn" className="closebtn" onClick={Close}>
         &times;
       </a>
-      <a
-        href="./index.html"
-        aria-label="nav-logo"
-        className="p-0"
-        onClick={Close}
-      >
+      <Link to={"/"} aria-label="nav-logo" className="p-0" onClick={Close}>
         <img
           alt="logo"
           className="img-fluid "
           style={{ width: "auto", height: "180px" }}
           src={img}
         />
-      </a>
+      </Link>
       <Link className="nav-link" onClick={Close} to={"/"}>
         {t("Home")}
       </Link>

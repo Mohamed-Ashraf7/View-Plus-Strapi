@@ -47,7 +47,7 @@ const Project = () => {
           <div className="col-lg-6 col-11 mx-auto text-center">
             <img
               className="img-top"
-              src={`${baseUrl}${project?.attributes.main_image.data?.attributes?.url}`}
+              src={`${project?.attributes.main_image.data?.attributes?.url}`}
               alt="main-project"
             />
           </div>
@@ -64,8 +64,8 @@ const Project = () => {
                 <img
                   loading="lazy"
                   className="img-fluid w-100"
-                  src={`${baseUrl}${item?.attributes?.url}`}
-                  alt={`${baseUrl}${item?.attributes?.url}`}
+                  src={`${item?.attributes?.url}`}
+                  alt={`${item?.attributes?.url}`}
                 />
               </div>
             ))}
@@ -90,7 +90,7 @@ const Project = () => {
                         <div className="swiper-slide">
                           <img
                             alt={item?.attributes?.title}
-                            src={`${baseUrl}${item?.attributes?.main_image.data.attributes.url}`}
+                            src={`${item?.attributes?.main_image.data.attributes.url}`}
                             loading="lazy"
                             className="img-fluid w-100 h-100"
                           />

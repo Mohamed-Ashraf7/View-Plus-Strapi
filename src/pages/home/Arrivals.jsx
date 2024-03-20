@@ -4,7 +4,7 @@ import { getProducts } from "../../store/products/productAction";
 import MySwiper from "../../component/Swiper";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { baseUrl } from "../../utils/APi";
+
 const Arrivals = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -75,7 +75,7 @@ const Arrivals = () => {
                       key={idx}
                     >
                       <img
-                        src={`${baseUrl}${item?.attributes?.main_image.data.attributes.url}`}
+                        src={`${item?.attributes?.main_image.data.attributes.url}`}
                         alt={item?.attributes?.title}
                       />
                       <h6 className="text-center mt-2">

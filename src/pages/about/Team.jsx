@@ -2,7 +2,7 @@ import { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getTeams } from "../../store/team/teamAction";
 import { useTranslation } from "react-i18next";
-import { baseUrl } from "../../utils/APi";
+
 const Team = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const Team = () => {
                   <img
                     loading="lazy"
                     className="img-fluid"
-                    src={`${baseUrl}${item?.attributes?.image.data.attributes.url}`}
+                    src={`${item?.attributes?.image.data.attributes.url}`}
                     alt={item?.attributes?.name}
                   />
                   <h4 className="py-4"> {t(`${item?.attributes?.name}`)}</h4>

@@ -10,6 +10,7 @@ import Project from "./pages/project/Project";
 import SingleProduct from "./pages/single-product/SingleProduct";
 import Home from "./pages/home/Home";
 import BackTop from "./component/BackTop";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 

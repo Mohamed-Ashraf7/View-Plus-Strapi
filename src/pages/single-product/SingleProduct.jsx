@@ -47,7 +47,7 @@ const SingleProduct = () => {
             <div className="img-card row">
               <div className="col-md-9 col-12">
                 <img
-                  src={`${baseUrl}${selectedImage}`}
+                  src={`${selectedImage}`}
                   alt="main-product"
                   id="featured-image"
                 />
@@ -57,7 +57,7 @@ const SingleProduct = () => {
                   {product?.attributes.sub_image.data?.map((item, idx) => (
                     <img
                       key={idx}
-                      src={`${baseUrl}${item?.attributes?.url}`}
+                      src={`${item?.attributes?.url}`}
                       alt={item?.attributes?.url}
                       className="small-Img"
                       onClick={() => handleImageClick(item?.attributes?.url)}
@@ -71,7 +71,7 @@ const SingleProduct = () => {
             <div className="brand-container">
               <img
                 alt="brand-name"
-                src={`${baseUrl}${product?.attributes.sub_image.data[0]?.attributes?.url}`}
+                src={`${product?.attributes.sub_image.data[0]?.attributes?.url}`}
                 className="img-fluid top-img"
               />
               <h5>
@@ -85,7 +85,7 @@ const SingleProduct = () => {
                 >
                   Agroub Buchtal
                   <img
-                    src={`${baseUrl}${product?.attributes.sub_image.data[1]?.attributes?.url}`}
+                    src={`${product?.attributes.sub_image.data[1]?.attributes?.url}`}
                     alt="brand-logo"
                     className="bottom-img"
                   />
@@ -172,7 +172,7 @@ const SingleProduct = () => {
                 >
                   <img
                     loading="lazy"
-                    src={`${baseUrl}${item?.attributes?.main_image.data.attributes.url}`}
+                    src={`${item?.attributes?.main_image.data.attributes.url}`}
                     alt={item?.attributes?.title}
                     className="img-fluid"
                   />

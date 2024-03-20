@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import img from "../../assets/images/about/signature.jpg";
 import { getAbout } from "./../../store/about/aboutAction";
-import { baseUrl } from "../../utils/APi";
+
 import Team from "./Team";
 const Hero = () => {
   const { t } = useTranslation();
@@ -24,9 +24,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="about-main-image">
-          <img
-            src={`${baseUrl}${info[0]?.attributes?.image.data.attributes.url}`}
-          />
+          <img src={`${info[0]?.attributes?.image.data.attributes.url}`} />
         </div>
       </section>
       <section className="middle-par pt-5">
@@ -54,7 +52,7 @@ const Hero = () => {
                 <img
                   className="img-fluid"
                   loading="lazy"
-                  src={`${baseUrl}${info[2]?.attributes?.image.data.attributes.url}`}
+                  src={`${info[2]?.attributes?.image.data.attributes.url}`}
                   alt="about-top"
                 />
               </div>
@@ -83,7 +81,7 @@ const Hero = () => {
             <div className="about-desc-img col-lg-11 col-12  ">
               <img
                 className="mx-auto"
-                src={`${baseUrl}${info[3]?.attributes?.image.data.attributes.url}`}
+                src={`${info[3]?.attributes?.image.data.attributes.url}`}
                 alt="about-main"
               />
             </div>
@@ -125,7 +123,7 @@ const Hero = () => {
                 id="service"
                 loading="lazy"
                 alt="what-do-image"
-                src={`${baseUrl}${info[4]?.attributes?.image.data.attributes.url}`}
+                src={`${info[4]?.attributes?.image.data.attributes.url}`}
                 className="img-fluid what-top-img"
               />
             </div>
@@ -135,13 +133,13 @@ const Hero = () => {
               <img
                 loading="lazy"
                 alt="what-do-image-one"
-                src={`${baseUrl}${info[6]?.attributes?.image.data.attributes.url}`}
+                src={`${info[6]?.attributes?.image.data.attributes.url}`}
                 className="img-fluid what-bottom-img"
               />
               <img
                 loading="lazy"
                 alt="what-do-image-two"
-                src={`${baseUrl}${info[8]?.attributes?.image.data.attributes.url}`}
+                src={`${info[8]?.attributes?.image.data.attributes.url}`}
                 className="img-fluid what-bottom-img"
               />
             </div>
