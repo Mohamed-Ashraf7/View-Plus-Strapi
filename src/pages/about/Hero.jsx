@@ -3,17 +3,21 @@ import { useSelector, useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import img from "../../assets/images/about/signature.jpg";
 import { getAbout } from "./../../store/about/aboutAction";
-
+import Loader from "../../component/Loader";
 import Team from "./Team";
+
 const Hero = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const info = useSelector((state) => state.aboutSlicer.info);
+
+  const { info, loading } = useSelector((state) => state.aboutSlicer);
   useEffect(() => {
     dispatch(getAbout());
   }, [dispatch]);
 
-  return (
+  return loading === "pending" ? (
+    <Loader />
+  ) : (
     <Fragment>
       <section className="main-about">
         <div className="container">

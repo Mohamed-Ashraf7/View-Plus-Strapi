@@ -19,10 +19,12 @@ const Products = createSlice({
     });
     builder.addCase(getProducts.fulfilled, (state, action) => {
       state.Products = action.payload;
+      state.loading = "idle";
       state.error = null;
     });
     builder.addCase(getcategory.fulfilled, (state, action) => {
       state.category = action.payload;
+      state.loading = "idle";
       state.error = null;
     });
     builder.addCase(getProducts.rejected, (state, action) => {

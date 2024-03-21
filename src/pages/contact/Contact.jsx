@@ -2,16 +2,18 @@ import { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getContactInfo } from "../../store/contact/contactAction";
 import { useTranslation } from "react-i18next";
-
+import Loader from "./../../component/Loader";
 const Contact = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const info = useSelector((state) => state.contactSlice.info);
+  const { info, loading } = useSelector((state) => state.contactSlice);
   useEffect(() => {
     dispatch(getContactInfo());
   }, [dispatch]);
-  console.log(info);
-  return (
+
+  return loading === "pending" ? (
+    <Loader />
+  ) : (
     <Fragment>
       <section className="ftco-section contact-top ftco-intro mt-0">
         <div className="container">
@@ -49,12 +51,11 @@ const Contact = () => {
         <div className="container">
           <div className="row align-items-center justify-content-center">
             <div className="col-lg-6 wow fadeInUp">
-              <h3 className="py-4">CONTACT US</h3>
+              <h3 className="py-4">{t("CONTACT US")}</h3>
               <div className="d-flex flex-column justify-content-between">
                 <div className="d-flex align-items-center w-100 mb-3">
                   <div className="ms-4">
                     <h4 className="mb-1">
-                      {" "}
                       {t(
                         `${
                           info[1]?.attributes?.name && info[1]?.attributes.name

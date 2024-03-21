@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {getSlides} from "./SliderAction";
-
+import { getSlides } from "./SliderAction";
 
 const initialState = {
   Data: [],
@@ -10,7 +9,7 @@ const initialState = {
 
 const Slider = createSlice({
   name: "slides",
-  initialState:initialState,
+  initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getSlides.pending, (state) => {
@@ -19,6 +18,7 @@ const Slider = createSlice({
     });
     builder.addCase(getSlides.fulfilled, (state, action) => {
       state.Data = action.payload;
+      state.loading = "idle";
       state.error = null;
     });
     builder.addCase(getSlides.rejected, (state, action) => {

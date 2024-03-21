@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {getContactInfo} from "./contactAction";
-
+import { getContactInfo } from "./contactAction";
 
 const initialState = {
   info: [],
@@ -10,7 +9,7 @@ const initialState = {
 
 const contactSlice = createSlice({
   name: "contact",
-  initialState:initialState,
+  initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getContactInfo.pending, (state) => {
@@ -19,6 +18,7 @@ const contactSlice = createSlice({
     });
     builder.addCase(getContactInfo.fulfilled, (state, action) => {
       state.info = action.payload;
+      state.loading = "idle";
       state.error = null;
     });
     builder.addCase(getContactInfo.rejected, (state, action) => {
@@ -28,4 +28,4 @@ const contactSlice = createSlice({
   },
 });
 
-export default  contactSlice.reducer;
+export default contactSlice.reducer;

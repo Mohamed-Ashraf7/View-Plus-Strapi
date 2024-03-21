@@ -10,10 +10,8 @@ import Project from "./pages/project/Project";
 import SingleProduct from "./pages/single-product/SingleProduct";
 import Home from "./pages/home/Home";
 import BackTop from "./component/BackTop";
-
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const Layout = () => {
@@ -36,7 +34,7 @@ const Layout = () => {
   );
 };
 
-function App() {
+const App = () => {
   useEffect(() => {
     AOS.init({
       duration: 600,
@@ -48,6 +46,6 @@ function App() {
       <Layout />
     </Router>
   );
-}
+};
 
 export default App;

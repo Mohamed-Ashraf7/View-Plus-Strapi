@@ -6,10 +6,13 @@ import { getProjects } from "../../store/project/projectAction";
 import { useTranslation } from "react-i18next";
 import { baseUrl } from "../../utils/APi";
 import MySwiper from "../../component/Swiper";
+import Loader from "./../../component/Loader";
+
 const Project = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const Projects = useSelector((state) => state.projectSlicer.Projects);
+  const loading = useSelector((state) => state.projectSlicer.loading);
   const { projectId } = useParams();
   const [project, setProject] = useState(null);
   const fetchProject = useMemo(
@@ -37,7 +40,9 @@ const Project = () => {
     fetchProject();
   }, [projectId, fetchProject, t, dispatch]);
 
-  return (
+  return loading === "pending" ? (
+    <Loader />
+  ) : (
     <section className="project-page mt-0">
       <div className="container-fluid main-project">
         <div className="row justify-content-center">

@@ -3,8 +3,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { baseUrl } from "../../utils/APi";
+import { useTranslation } from "react-i18next";
+import Loader from "../../component/Loader";
 const SingleProduct = () => {
+  const { t } = useTranslation();
   const products = useSelector((state) => state.Products.Products);
+  const loading = useSelector((state) => state.Products.loading);
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
 
@@ -39,7 +43,9 @@ const SingleProduct = () => {
       setSelectedImage(product.attributes.sub_image.data[0].attributes.url);
     }
   }, [product]);
-  return (
+  return loading === "pending" ? (
+    <Loader />
+  ) : (
     <main className="single-product py-5">
       <div className="container-fluid product-top">
         <div className="row px-xl-5">
@@ -105,40 +111,36 @@ const SingleProduct = () => {
                     data-toggle="tab"
                     href="#tab-pane-1"
                   >
-                    OVERVIEW
+                    {t("OVERVIEW")}
                   </a>
                   <a
                     className="nav-item nav-link text-dark"
                     data-toggle="tab"
                     href="#tab-pane-2"
                   >
-                    DIMENSIONS
+                    {t("DIMENSIONS")}
                   </a>
                   <a
                     className="nav-item nav-link text-dark"
                     data-toggle="tab"
                     href="#tab-pane-3"
                   >
-                    COLORS
+                    {t("COLORS")}
                   </a>
                 </div>
                 <div className="tab-content px-xl-5">
                   <div className="tab-pane fade show active" id="tab-pane-1">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      {t(
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitationullamco laboris nisi ut aliquip ex tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ea commodo consequat."
+                      )}{" "}
                     </p>
                   </div>
                   <div className="tab-pane fade" id="tab-pane-2">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex tempor incididunt ut
-                      labore et dolore magna aliqua. Ut enim ad minim veniam, ea
-                      commodo consequat.
+                      {t(
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitationullamco laboris nisi ut aliquip ex tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ea commodo consequat."
+                      )}{" "}
                     </p>
                   </div>
                   <div className="tab-pane fade" id="tab-pane-3">
@@ -158,7 +160,7 @@ const SingleProduct = () => {
         <div className="container">
           <div className="row pb-5">
             <div className="col-md-12 d-flex justify-content-center">
-              <h3>OTHER PRODUCTS</h3>
+              <h3>{t("OTHER PRODUCTS")}</h3>
             </div>
           </div>
 

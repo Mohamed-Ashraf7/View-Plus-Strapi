@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {getHomeInfo} from "./homeAction";
-
+import { getHomeInfo } from "./homeAction";
 
 const initialState = {
   info: [],
@@ -10,7 +9,7 @@ const initialState = {
 
 const homeSlice = createSlice({
   name: "home",
-  initialState:initialState,
+  initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getHomeInfo.pending, (state) => {
@@ -19,6 +18,7 @@ const homeSlice = createSlice({
     });
     builder.addCase(getHomeInfo.fulfilled, (state, action) => {
       state.info = action.payload;
+      state.loading = "idle";
       state.error = null;
     });
     builder.addCase(getHomeInfo.rejected, (state, action) => {
@@ -28,4 +28,4 @@ const homeSlice = createSlice({
   },
 });
 
-export default  homeSlice.reducer;
+export default homeSlice.reducer;

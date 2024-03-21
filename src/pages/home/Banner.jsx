@@ -5,10 +5,10 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getSlides } from "../../store/slider/SliderAction";
 import { useTranslation } from "react-i18next";
-
+import Loader from "../../component/Loader";
 const HomeSlider = () => {
   const dispatch = useDispatch();
-  const slides = useSelector((state) => state.slider.Data);
+  const { Data, loading } = useSelector((state) => state.slider);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -62,7 +62,9 @@ const HomeSlider = () => {
     onTranslated: handleSlideType,
   };
 
-  return (
+  return loading === "pending" ? (
+    <Loader />
+  ) : (
     <section id="home-section" className="hero" dir="ltr">
       <div className="js-fullheight home-wrap d-flex">
         <div className="half">
@@ -86,16 +88,16 @@ const HomeSlider = () => {
                     >
                       <source
                         id="video"
-                        src={`${slides[0]?.attributes?.image.data.attributes.url}`}
+                        src={`${Data[0]?.attributes?.image.data.attributes.url}`}
                         type="video/mp4"
                       />
                     </video>
                     <div className="vr">
                       <h1 className="text text-center">
                         <span className="top">
-                          {t(`${slides[0]?.attributes?.title}`)}
+                          {t(`${Data[0]?.attributes?.title}`)}
                         </span>
-                        <span> {t(`${slides[0]?.attributes?.subtitle}`)}</span>
+                        <span> {t(`${Data[0]?.attributes?.subtitle}`)}</span>
                       </h1>
                     </div>
                     <div className="overlay"></div>
@@ -112,15 +114,15 @@ const HomeSlider = () => {
                   <div
                     className="one-third img js-fullheight"
                     style={{
-                      backgroundImage: `url(${slides[1]?.attributes?.image.data.attributes.url})`,
+                      backgroundImage: `url(${Data[1]?.attributes?.image.data.attributes.url})`,
                     }}
                   >
                     <div className="vr">
                       <h1 className="text text-center">
                         <span className="top">
-                          {t(`${slides[1]?.attributes?.title}`)}
+                          {t(`${Data[1]?.attributes?.title}`)}
                         </span>
-                        <span> {t(`${slides[1]?.attributes?.subtitle}`)} </span>
+                        <span> {t(`${Data[1]?.attributes?.subtitle}`)} </span>
                       </h1>
                     </div>
                     <div className="overlay"></div>
@@ -137,15 +139,15 @@ const HomeSlider = () => {
                   <div
                     className="one-third img js-fullheight"
                     style={{
-                      backgroundImage: `url(${slides[2]?.attributes?.image.data.attributes.url})`,
+                      backgroundImage: `url(${Data[2]?.attributes?.image.data.attributes.url})`,
                     }}
                   >
                     <div className="vr">
                       <h1 className="text text-center">
                         <span className="top">
-                          {t(`${slides[2]?.attributes?.title}`)}
+                          {t(`${Data[2]?.attributes?.title}`)}
                         </span>
-                        <span> {t(`${slides[2]?.attributes?.subtitle}`)}</span>
+                        <span> {t(`${Data[2]?.attributes?.subtitle}`)}</span>
                       </h1>
                     </div>
                     <div className="overlay"></div>

@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { getAbout } from './aboutAction';
-
+import { getAbout } from "./aboutAction";
 
 const initialState = {
   info: [],
@@ -11,7 +10,7 @@ const initialState = {
 
 const aboutSlice = createSlice({
   name: "about",
-  initialState:initialState,
+  initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getAbout.pending, (state) => {
@@ -20,6 +19,7 @@ const aboutSlice = createSlice({
     });
     builder.addCase(getAbout.fulfilled, (state, action) => {
       state.info = action.payload;
+      state.loading = "idle";
       state.error = null;
     });
     builder.addCase(getAbout.rejected, (state, action) => {

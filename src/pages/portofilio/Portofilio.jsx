@@ -6,13 +6,14 @@ import {
   getProjects,
   getProjectCat,
 } from "../../store/project/projectAction";
-
 import { useTranslation } from "react-i18next";
+import Loader from "./../../component/Loader";
+
 const Portofilio = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [visibleProjects, setVisibleProjects] = useState(6);
-  const { Projects, info, categories } = useSelector(
+  const { Projects, info, categories, loading } = useSelector(
     (state) => state.projectSlicer
   );
 
@@ -38,7 +39,9 @@ const Portofilio = () => {
             project.attributes?.project_category.data.attributes?.name ===
             selectedCategory
         );
-  return (
+  return loading === "pending" ? (
+    <Loader />
+  ) : (
     <Fragment>
       <section className="Portfolio">
         <div className="container">

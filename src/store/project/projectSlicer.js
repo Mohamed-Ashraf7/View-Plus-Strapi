@@ -21,14 +21,17 @@ const projects = createSlice({
     });
     builder.addCase(getProjects.fulfilled, (state, action) => {
       state.Projects = action.payload;
+      state.loading = "idle";
       state.error = null;
     });
     builder.addCase(getPotrofiloInfo.fulfilled, (state, action) => {
       state.info = action.payload;
+      state.loading = "idle";
       state.error = null;
     });
     builder.addCase(getProjectCat.fulfilled, (state, action) => {
       state.categories = action.payload;
+      state.loading = "idle";
       state.error = null;
     });
     builder.addCase(getProjects.rejected, (state, action) => {

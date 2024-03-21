@@ -4,17 +4,19 @@ import { getProducts, getcategory } from "../../store/products/productAction";
 import { Link } from "react-router-dom";
 import img from "../../assets/images/products/1.png";
 import { useTranslation } from "react-i18next";
+import Loader from "./../../component/Loader";
 
 const Products = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const products = useSelector((state) => state.Products.Products);
+  const loading = useSelector((state) => state.Products.loading);
   const categories = useSelector((state) => state.Products.category);
 
   useEffect(() => {
     dispatch(getProducts());
     dispatch(getcategory());
-  }, []);
+  }, [dispatch]);
 
   const [selectedCategory, setSelectedCategory] = useState("All");
 
@@ -30,7 +32,9 @@ const Products = () => {
             product.attributes?.product_category.data.attributes?.name ===
             selectedCategory
         );
-  return (
+  return loading === "pending" ? (
+    <Loader />
+  ) : (
     <Fragment>
       <section className="ftco-section product-page ftco-intro mt-0">
         <div className="container">
